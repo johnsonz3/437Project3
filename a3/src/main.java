@@ -17,7 +17,6 @@ public class main {
 
     public static void doSomeStuff(Instrumentation ins){
         ins.startTiming("doSomeStuff()");
-        System.out.println("Hello there!");
         try
         {
             Thread.sleep(1);
