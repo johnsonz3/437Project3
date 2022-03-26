@@ -75,12 +75,21 @@ public class Instrumentation {
                 {
                     output+="\t";
                 }
-                output+="STOPTIMING: " + instance.getComment() + ((instance.getTime()-time)/1000000) + "ms \n";
+                long stopTime = ((instance.getTime()-time)/1000000);
+                output+="STOPTIMING: " + instance.getComment() + " " + stopTime + "ms \n";
                 previous = "stop";
+                if (instance.getComment().equals("main")) {
+                    output += "TOTAL TIME: " + stopTime + "ms \n";
+                }
             }
 
-            else if (type.equals("comment")) {
-                output += "COMMENT:" + instance.getComment() + "\n";
+            else if (type.equals("comment")) 
+            {
+                for (int i=0; i<tabs; i++)
+                {
+                    output+="\t";
+                }
+                output += "COMMENT: " + instance.getComment() + "\n";
             }
         }
         //something something write to file tbh I don't remember this very well
