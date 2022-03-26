@@ -9,15 +9,15 @@ public class timing {
         this.type = type;
         time = System.nanoTime();
     }
-    private String getComment()
+    public String getComment()
     {
         return comment;
     }
-    private long getTime()
+    public long getTime()
     {
         return time;
     }
-    private String getType()
+    public String getType()
     {
         return type;
     }
