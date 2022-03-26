@@ -1,12 +1,13 @@
 import java.util.ArrayList;
 import java.util.Stack;
-
+import java.io.FileWriter;   // Import the FileWriter class
+import java.io.IOException;  // Import the IOException class to handle errors
 public class Instrumentation {
     boolean activated = false;
     ArrayList<timing> timings;
     public Instrumentation()
     {
-        ArrayList<timing> timings = new ArrayList<>();
+        this.timings = new ArrayList<>();
     }
     public boolean activate(boolean onoff)
     {
@@ -39,7 +40,7 @@ public class Instrumentation {
         return comment;
 
     }
-    public boolean dump(String filename)
+    public boolean dump()
     {
         if(!activated) {
             return false;
@@ -74,7 +75,7 @@ public class Instrumentation {
                 {
                     output+="\t";
                 }
-                output+="STOPTIMING: " + instance.getComment() + (instance.getTime()-time) + "nanoseconds \n";
+                output+="STOPTIMING: " + instance.getComment() + ((instance.getTime()-time)/1000000) + "ms \n";
                 previous = "stop";
             }
 
@@ -82,7 +83,16 @@ public class Instrumentation {
                 output += "COMMENT:" + instance.getComment() + "\n";
             }
         }
-    //something something write to file tbh I don't remember this very well
+        //something something write to file tbh I don't remember this very well
+        try {
+            FileWriter myWriter = new FileWriter("output.txt");
+            myWriter.write(output);
+            myWriter.close();
+            System.out.println("Successfully wrote to the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
     return true;
 
     }
