@@ -92,7 +92,7 @@ public class Instrumentation {
                 output += "COMMENT: " + instance.getComment() + "\n";
             }
         }
-        //something something write to file tbh I don't remember this very well
+
         try {
             FileWriter myWriter = new FileWriter("output.txt");
             myWriter.write(output);
