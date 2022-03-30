@@ -2,6 +2,9 @@ import java.util.ArrayList;
 import java.util.Stack;
 import java.io.FileWriter;   // Import the FileWriter class
 import java.io.IOException;  // Import the IOException class to handle errors
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 public class Instrumentation {
     boolean activated = false;
     ArrayList<timing> timings;
@@ -40,7 +43,7 @@ public class Instrumentation {
         return comment;
 
     }
-    public boolean dump()
+    public boolean dump(String filename)
     {
         if(!activated) {
             return false;
@@ -94,7 +97,13 @@ public class Instrumentation {
         }
 
         try {
-            FileWriter myWriter = new FileWriter("output.txt");
+            if (filename==null)
+            {
+                Calendar c = Calendar.getInstance();
+                SimpleDateFormat dateFormat = new SimpleDateFormat("ddyyMMhhmmss");
+                filename = "instrumentation"+dateFormat.format(c.getTime());
+            }
+            FileWriter myWriter = new FileWriter(filename+".log");
             myWriter.write(output);
             myWriter.close();
             System.out.println("Successfully wrote to the file.");
