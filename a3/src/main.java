@@ -12,7 +12,7 @@ public class main {
         ins.stopTiming("loop");
         ins.comment("this is an example of a comment!");
         ins.stopTiming("main");
-        ins.dump();
+        ins.dump("output");
     }
 
     public static void doSomeStuff(Instrumentation ins){

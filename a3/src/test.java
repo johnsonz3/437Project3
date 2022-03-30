@@ -25,7 +25,7 @@ public class test {
         ins.stopTiming("quick sort");
 
         ins.stopTiming("main");
-        ins.dump();
+        ins.dump("output");
         ins.activate(false);
 
 
