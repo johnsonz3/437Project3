@@ -1,4 +1,3 @@
-package Sorts;
 
 /*
  * @(#)QSortAlgorithm.java	1.6f 95/01/31 James Gosling

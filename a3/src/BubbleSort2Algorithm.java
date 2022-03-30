@@ -1,4 +1,3 @@
-package Sorts;
 
 /*
  * @(#)BubbleSortAlgorithm.java	1.6 95/01/31 James Gosling

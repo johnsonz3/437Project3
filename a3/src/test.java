@@ -1,6 +1,3 @@
-import Sorts.BubbleSort2Algorithm;
-import Sorts.QSortAlgorithm;
-
 import java.util.Random;
 import java.util.Arrays;
 
