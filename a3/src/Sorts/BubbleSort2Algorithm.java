@@ -31,7 +31,7 @@ package Sorts;
  *   last pass.
  */
 public class BubbleSort2Algorithm extends SortAlgorithm {
-    public static void sort(int a[])  {
+    public static void sort(int[] a)  {
         for (int i = a.length; --i>=0; ) {
             boolean flipped = false;
             for (int j = 0; j<i; j++) {
