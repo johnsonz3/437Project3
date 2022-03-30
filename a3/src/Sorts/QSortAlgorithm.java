@@ -59,7 +59,7 @@ public class QSortAlgorithm extends SortAlgorithm {
     smaller (smaller than pivot) to left of
     pivot and all greater elements to right
     of pivot */
-    static int partition(int arr[], int low, int high)
+    static int partition(int[] arr, int low, int high)
     {
         int pivot = arr[high];
  
@@ -89,7 +89,7 @@ public class QSortAlgorithm extends SortAlgorithm {
     /* A[] --> Array to be sorted,
    l  --> Starting index,
    h  --> Ending index */
-    static void quickSortIterative(int arr[], int l, int h)
+    static void quickSortIterative(int[] arr, int l, int h)
     {
         // Create an auxiliary stack
         int[] stack = new int[h - l + 1];
@@ -127,7 +127,7 @@ public class QSortAlgorithm extends SortAlgorithm {
         }
     }
 
-    public static void sort(int a[]) {
+    public static void sort(int[] a) {
         quickSortIterative(a, 0, a.length-1);
     }
 }
