@@ -79,10 +79,10 @@ public class Instrumentation {
                     output+="\t";
                 }
                 long stopTime = ((instance.getTime()-time)/1000000);
-                output+="STOPTIMING: " + instance.getComment() + " " + stopTime + "ms \n";
+                output+="STOPTIMING: " + instance.getComment() + " " + stopTime + " ms \n";
                 previous = "stop";
                 if (instance.getComment().equals("main")) {
-                    output += "TOTAL TIME: " + stopTime + "ms \n";
+                    output += "TOTAL TIME: " + stopTime + " ms \n";
                 }
             }
 

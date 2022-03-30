@@ -124,7 +124,9 @@ public class QSortAlgorithm extends SortAlgorithm {
         sort(a, hi+1, hi0);
     }
 
-    public static void sort(int[] a) {
+    public static void sort(int[] a, Instrumentation ins) {
+        ins.startTiming("QuickSort Instrument");
         sort(a, 0, a.length-1);
+        ins.stopTiming("QuickSort Instrument");
     }
 }

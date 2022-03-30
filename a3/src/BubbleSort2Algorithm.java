@@ -30,7 +30,8 @@
  *   last pass.
  */
 public class BubbleSort2Algorithm extends SortAlgorithm {
-    public static void sort(int[] a)  {
+    public static void sort(int[] a, Instrumentation ins)  {
+        ins.startTiming("BubbleSort Instrument");
         for (int i = a.length; --i>=0; ) {
             boolean flipped = false;
             for (int j = 0; j<i; j++) {
@@ -44,6 +45,7 @@ public class BubbleSort2Algorithm extends SortAlgorithm {
 
             }
             if (!flipped) {
+                ins.stopTiming("BubbleSort Instrument");
                 return;
             }
         }
