@@ -30,10 +30,19 @@ public class test {
 
 
     }
+
+    //unseeded to test variability
+    public static int[] populateRandomArray(long size)
+    {
+        Random random = new Random();
+        return random.ints(size, 1, 100000).toArray();
+    }
+
+    //seeded to test consistency
     public static int[] populateArray(long size)
     {
-        Random r = new Random();
-        return r.ints(size, 1, 100000).toArray();
+        Random seeded = new Random(437);
+        return seeded.ints(size, 1, 100000).toArray();
     }
 
 }
