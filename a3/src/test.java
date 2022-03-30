@@ -1,7 +1,7 @@
 import Sorts.BubbleSort2Algorithm;
 import Sorts.QSortAlgorithm;
 
-import java.lang.Math;
+import java.util.Random;
 import java.util.Arrays;
 
 public class test {
@@ -30,13 +30,10 @@ public class test {
 
 
     }
-    public static int[] populateArray(int size)
+    public static int[] populateArray(long size)
     {
-        int[] array = new int[size];
-        for(int i=0; i<size; i++)
-        {
-            array[i] = (int) (Math.random() * 999999)+1;
-        }
-        return array;
+        Random r = new Random();
+        return r.ints(size, 1, 100000).toArray();
     }
+
 }
